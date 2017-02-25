@@ -1,0 +1,151 @@
+
+.bluebox {
+  background-color:#174F78;
+  width:100%;
+  height:500px;
+}
+.widgets {
+  display:inline-block;
+  margin-left:700px;
+  vertical-align:top;
+  color:white;
+  margin-top:-150px;
+
+  
+}
+.widgets a {
+  color:yellow;
+}
+.text_size {
+  margin-left:350px;
+}
+
+.search {
+  background-color:#444444;
+  border-radius:10px;
+  height:80px;
+  width:400px;
+  margin-left:100px;
+  display:inline-block;
+  box-shadow: 5px 5px 5px black;
+  padding:10px;
+
+}
+.navbar {
+  width:90%;
+  font-size:2em;
+  margin-left:40px;
+  display:inline-block;
+  background-color:#3A7CAF;
+  border-radius:5px;
+  box-shadow: 5px 5px 5px black;
+  color:white;
+  padding:20px;
+
+}
+.navbar a {
+  text-decoration:none;
+  color:white;
+  
+  margin-left:30px;
+  margin-right:30px;
+}
+.left_nav {
+  text-align:center;
+  width:300px;
+  display:inline-block;
+  vertical-align:top;
+
+
+}
+.left_nav a {
+  color:white;
+}
+.right_side {
+  text-align:center;
+  display:inline-block;
+  width:60%;
+  color:white;
+  vertical-align:top;
+  margin-left:100px;
+}
+.line {
+  width:40%;
+  height:5px;
+  background-color:#68A5D7;
+  display:inline-block;
+  margin-left:100px;
+}
+.left_text {
+  display:inline-block;
+  width:25%;
+  vertical-align:top;
+}
+.right_text {
+  display:inline-block;
+  width:60%;
+  margin-left:200px;
+}
+.right_text li {
+  color:blue;
+}
+.left_text li {
+  color:blue;
+}
+.right_text span {
+  color:blue;
+}
+.go_button {
+  background-color:blue;
+  border-radius:5px;
+  border:2px solid white;
+  box-shadow: 5px 5px 5px black;
+  height:50px;
+  width:60px;
+  display:inline-block;
+  text-align:center;
+}
+input {
+  height:50px;
+  width:200px;
+  text-align:center;
+  
+}
+#black_line {
+  color:black;
+}
+span {
+  color:yellow;
+  font-style:italic;
+}
+.package {
+  color:blue;
+}
+form {
+  display:inline-block;
+  margin-left:80px;
+  margin-top:10px;
+}
+.left_text {
+  display:inline-block;
+  width:40%;
+  text-align:center;
+}
+.right_text {
+  display:inline-block;
+  width:40%;
+  text-align:center;
+}
+.footer {
+  background: linear-gradient(#174F78, #1F71AD);
+  text-align:center;
+  height:100px;
+  padding-top:40px;
+  color:#3A7DB1;
+
+}
+.footer a {
+  margin:0px 20px 0px 20px;
+  text-decoration:none;
+  color:#3A7DB1;
+}

@@ -1,0 +1,33 @@
+[Edwards-MacBook-Air]: ~/Desktop/DojoAssignments$ ls -R
+MEAN            Python          Ruby            WebFundamentals iOS             netCore
+
+./MEAN:
+about.txt
+
+./Python:
+about.txt
+
+./Ruby:
+about.txt
+
+./WebFundamentals:
+CSS        Git        HTML       Javascript about.txt
+
+./WebFundamentals/CSS:
+about.txt
+
+./WebFundamentals/Git:
+about.txt
+
+./WebFundamentals/HTML:
+about.txt        indentation.html
+
+./WebFundamentals/Javascript:
+about.txt
+
+./iOS:
+about.txt
+
+./netCore:
+about.txt
+[Edwards-MacBook-Air]: ~/Desktop/DojoAssignments$ 

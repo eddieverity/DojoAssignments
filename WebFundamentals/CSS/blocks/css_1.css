@@ -1,0 +1,32 @@
+body {
+  background-color:#D3D4AC;
+}
+#header {
+  padding-left:400px;
+  padding-right:400px;
+}
+#header img {
+  height: 80px;
+  width: 120px;
+  display:inline;
+  background-color:white;
+}
+#header h1 {
+  text-align:center;
+  display:inline;
+}
+body img {
+  height:300px;
+  width:300px;
+  border:2px solid black;
+}
+img {
+  background-color:#FF5465;
+}
+.bluewhite {
+  height:260px;
+  width:260px;
+  padding:20px;
+
+  background-color:#79B1F1;
+}

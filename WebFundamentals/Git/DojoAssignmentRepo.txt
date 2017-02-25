@@ -1,0 +1,4 @@
+*create repo on Github*
+cd ~
+cd Desktop/DojoAssignments
+git init

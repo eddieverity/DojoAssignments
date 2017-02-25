@@ -1,0 +1,23 @@
+*open terminal*
+cd ~
+cd Desktop
+mkdir test
+cd test
+touch index.html
+touch styles.css
+touch aboutMe.txt
+git init
+git add .
+git commit -m "Initial commit of test assignment for CodingDojo"
+subl aboutMe.txt   <!-- "subl" is a command I made to open files with sublime --!>
+*add bio to aboutMe.txt & save*
+git add aboutMe.txt (or "add .")
+git commit -m "Added bio to aboutMe.txt"
+*add favorite movie aboutMe.txt & save*
+git add aboutMe.txt (or "add .")
+git commit -m "Added favorite movie to aboutMe.txt"
+git log
+git revert HEAD
+*add current temp to aboutMe.txt & save*
+git add .
+git commit -m git commit -m "Added current temp"
