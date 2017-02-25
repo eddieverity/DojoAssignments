@@ -1,0 +1,1 @@
+These contents contain the projects & assignments for Coding Dojo Chicago bootcamp
