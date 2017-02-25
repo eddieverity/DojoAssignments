@@ -1,4 +1,15 @@
-*create repo on Github*
+*create repo on Github & copy to clipboard url*
 cd ~
 cd Desktop/DojoAssignments
 git init
+git add .
+git commit -m "initial commit"
+*paste url to connect local to remote*
+git push origin master
+touch readme.md
+*adjust readme.md in text editor to explain contents of this folder & save*
+git status
+git add .
+git commit -m "added readme.md"
+git push origin master
+
