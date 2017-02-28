@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <title>jQuery functionality in action</title>
+      <meta charset="UTF-8">
+      <meta name="description" content="statements about this site">
+      <link rel="stylesheet" type="text/css" href="jQuery_functions.css">
+      <script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+      <script type="text/javascript">
+        $(document).ready (function() {
+            $('#click').click(function() {
+              $("p").css("background-color","red");
+            });
+            $('#hide').click(function() {
+              $(".hide").hide();
+            });
+            $('#show').click(function() {
+              $(".show").show("slow");
+            });
+            $( "#toggle" ).click(function() {
+              $(".toggle" ).toggle( "slow", function() {
+            })});
+            $("#slide_down").click(function() {
+              $(".slide").slideDown("slow",function(){
+            })});
+            $("#slide_up").click(function() {
+              $(".slide_up").slideUp("slow",function(){
+            })});
+            $("#slide_toggle").click(function(){
+              $(".slide_toggle").slideToggle("slow",function(){   
+              })})
+
+
+          });
+
+      </script>
+    </head>
+    <body>
+      <button id="click">Click Me!</button>
+      <h1>.click function</h1>
+      <p>Click the button to change the .css file for this paragraph!</p>
+      <hr>
+      
+      <button id="hide">Click Me!</button>
+      <h1>.hide function</h1>
+      <p class="hide">Click the button to hide this paragraph!<p>
+      <hr>
+      
+      <button id="show">Click Me!</button>
+      <h1>.show function</h1>
+      <p>Click the button to show the punchline!</p>
+      <p><strong>How did the programmer die in the shower?</strong></p>
+      <p style="display:none" class="show">---He followed the instructions: Lather, rinse, repeat</p>
+      <hr>
+
+      <button id="toggle">Click Me!</button>
+      <h1>.toggle function</h1>
+      <p>Click the button repeatedly to toggle the hidden image!</p>
+      <img src="http://nobacks.com/wp-content/uploads/2014/11/Banana-2-500x338.png" class="toggle" alt="banana">
+      <hr>
+
+      <button id="slide_down">Click Me!</button>
+      <h1>.slideDown function</h1>
+      <p>Click the button to slide down an image</p>
+      <img src="https://images-na.ssl-images-amazon.com/images/I/71vmk%2B2t1AL._AC_UL115_.jpg" class="slide" alt="slide">
+      <hr>
+
+      <button id="slide_up">Click Me!</button>
+      <h1>.slideUp function</h1>
+      <p>Click the button to slide up the displayed image</p>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3aFCOG01ShRoIO_knEv9PFJu50JAGGf5kPOOB9orfj4f75TAK" class="slide_up" alt="monkeys">
+      <hr>
+
+      <button id="slide_toggle">Click Me!</button>
+      <h1>.slideToggle function</h1>
+      <p>Click the button repeatedly to make Dieter Dance!</p>
+      <img src="http://i.amz.mshcdn.com/4TuT6ZeugoMD6e4Pzke2jO64NGE=/fit-in/850x850/http%3A%2F%2Fmashable.com%2Fwp-content%2Fgallery%2Fsnl-characters-we-want-to-see-return%2Fsnl-gallery-dieter.jpg" class="slide_toggle" alt="Dieter">
+      <hr>
+
+      
+
+
+    </body>
+  </html>
+<!--
+[X]  .click
+[X]  .hide
+[X]  .show
+[X]  .toggle
+[X]  .slideDown
+[X]  .slideUp
+[0]  .slideToggle
+[0]  .fadeIn
+[0]  .fadeOut
+[0]  .addClass
+[0]  .before
+[0]  .after
+[0]  .append
+[0]  .html
+[0]  .attr
+[0]  .val
+[0]  .text
+[0]  .data
+-->
