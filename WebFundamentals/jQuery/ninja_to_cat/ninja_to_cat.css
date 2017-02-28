@@ -1,0 +1,15 @@
+img {
+  width:400;
+  display:block;
+  margin-bottom:30px;
+}
+div {
+  margin-left:45%;
+  margin-top:100px;
+}
+h1 {
+  text-align:center;
+}
+body {
+  background-color:silver;
+}

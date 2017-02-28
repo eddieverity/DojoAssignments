@@ -1,0 +1,22 @@
+.ninja {
+  width:200px;
+  border:20px solid red;
+  visibility:visible;
+}
+div {
+  margin-left:400px;
+}
+h1, p {
+  text-align:center;
+  color:silver;
+}
+body {
+  background: linear-gradient(black, silver);
+  height:1200px;
+}
+button {
+  margin-left:43%;
+  height:100px;
+  width:200px;
+  font-size:15px;
+}
