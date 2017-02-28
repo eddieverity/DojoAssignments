@@ -18,4 +18,20 @@ p {
 }
 .slide_toggle {
   width:200px;
+
+}
+.red_p {
+  background-color:gray;
+}
+.ship {
+  display:none;
+  width:400px;
+}
+.blue_p { 
+  background-color:blue;
+
+}
+.clicked {
+  width:100px;
+  height:100px;
 }
