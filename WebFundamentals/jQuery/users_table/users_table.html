@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <title>A Dynamic Table of Users</title>
+      <meta charset="UTF-8">
+      <meta name="description" content="statements about this site">
+      <link rel="stylesheet" type="text/css" href="users_table.css">
+      <script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+      <script type="text/javascript" src="users_table.js"></script>
+    </head>
+    <body>
+      <table>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email Address</th>
+          <th>Contact #</th>
+          <tbody>
+          </tbody>
+        </tr>
+      </table>
+      <h1>Add User</h1>
+      <hr>
+      <div id="form_container">
+        <form>
+          First Name:
+          <input type="text" name="first_name" value="First Name" class="first_name"><br>
+          Last Name:
+          <input type="text" name="last_name" value="Last Name" class="last_name"><br>
+          Email Address:
+          <input type="text" name="email" value="Email" class="email"><br>
+          Contact #:
+          <input type="text" name="phone_number" value="Phone #" class="phone_number"><br>
+          <input id="submit" type="submit" value="Add User">
+        </form>
+
+      </div>
+      
+
+    </body>
+  </html>
