@@ -1,0 +1,16 @@
+img {
+  width:40px;
+  display:inline-block;
+}
+#container {
+  width:78%;
+  display:inline-block;
+  vertical-align:top;
+}
+#stats {
+  width:20%;
+  display:inline-block;
+  vertical-align:top;
+  border:10px solid red;
+  height:500px;
+}

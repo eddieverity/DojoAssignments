@@ -6,6 +6,7 @@ $(document).ready (function() {
     var format = "<div class='card'><h4>" + first_name + "&nbsp &nbsp &nbsp" + last_name + "</h4><button class='card_button'>Click for description!</button>";
     $("#card_container").append(format);
     $('#card_container div:last-child').attr('desc', description);
+    console.log(#card_container div:last-child);
   });
   $("form").submit(function(){
     return false;
