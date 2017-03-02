@@ -13,12 +13,13 @@ $(document).ready (function() {
   });  
   $("form").submit(function(){
     return false;
-
-
   });
+  
+
+
 });
 
-// is it making two rows because i have a ".click" set to a form element of a submit? (where submit might already has some built-in functionality).
+// is it making two rows because i have a ".click" set to a form element of a submit? (where submit might already has some built-in functionality).  -- 
 
 //tried pasting line6-11 into the .submit function on line 14, broke functionality (tried before & after the 'return false' on line 15)
 

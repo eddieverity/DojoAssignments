@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <title>Dynamic creation of a contact card</title>
+      <meta charset="UTF-8">
+      <meta name="description" content="statements about this site">
+      <link rel="stylesheet" type="text/css" href="contact_card.css">
+      <script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+      <script type="text/javascript" src="contact_card.js"></script>
+    </head>
+    <body>
+      <div id="form_container">
+        <form>
+          First Name:
+          <input type="text" name="first_name" value="First Name" class="first_name"><br>
+          Last Name: 
+          <input type="text" name="last_name" value="Last Name" class="last_name"><br><br><br>
+          Description:<br>
+          <input type="text" name="description" value="Enter Description" class="description">
+          <br>
+          <input id="submit" type="submit" value="Add User">  
+        </form>
+      </div>
+      <div id="card_container">
+      </div>            
+    </body>
+  </html>
