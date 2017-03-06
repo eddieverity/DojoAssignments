@@ -1,0 +1,11 @@
+<html>
+<head>
+  <title></title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/my_stylesheet.css')}}">
+    <script type="text/javascript" src="{{ url_for('static', filename='js/my_script.js')}}"></script>
+</head>
+<body>
+  <h1>Hello flask!</h1>
+    <p>My name is {{ name }}</p>    <!-- interprets variable from hello.py -->
+</body>
+</html>
