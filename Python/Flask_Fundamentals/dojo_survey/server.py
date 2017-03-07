@@ -1,17 +1,17 @@
 from flask import Flask, render_template, request, redirect, session
 app = Flask(__name__)
-app.secret_key = 'ThisIsSecret' 
+
 @app.route('/')
 def index():
   return render_template("index.html")
-@app.route('/results', methods=["POST"])
+@app.route('/results', methods=["POST", "GET"])
 def create_user():
   print "Got Post Info"
-  session['name'] = request.form["name"]
-  session['location'] = request.form["location"]
-  session['language'] = request.form["language"]
-  session['comments'] = request.form["comments"]
+  name = request.form["name"]
+  location = request.form["location"]
+  language = request.form["language"]
+  comments = request.form["comments"]
 
-  return render_template('results.html', name = session["name"], location = session["location"], language = session["language"], comments = session["comments"])
+  return render_template('results.html', name = name, location = location, language = language, comments = comments)
 
 app.run(debug=True)
