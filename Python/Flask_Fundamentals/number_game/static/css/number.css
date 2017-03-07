@@ -1,0 +1,11 @@
+h2 {
+  height:200px;
+  width:300px;
+  background-color:red;
+  border-radius:20px;
+  text-align:center;
+  padding-top:30px;
+}
+h2.win {
+  background-color:green;
+}

@@ -1,0 +1,15 @@
+<html>
+<head>
+  <title>Great Number Game</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/number.css')}}">
+</head>
+<body>
+  <h1>Welcome to the Great Number Game!</h1>
+  <h3>I am thinking of a number between 1 and 100<h3>
+  <p>Take a Guess!</p>
+  <h2 class="win">You Win!</h2>
+  <form action='/reset' method='POST'>
+    <input type='submit' name='reset' value="Reset Game">
+  </form>
+</body>
+</html>
