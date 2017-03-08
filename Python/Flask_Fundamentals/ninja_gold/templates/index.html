@@ -1,0 +1,67 @@
+<html>
+<head>
+  <title>$$$NINJA$$$</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheets/ninja.css')}}">
+</head>
+<body>
+
+
+  <p>Your Gold:</p>
+  <form>
+    <input type='text' name='activity' value="{{session['gold']}}">
+  </form>
+
+
+  <div class="getmoney">
+    <h3>Farm</h3>
+    <p>(earns 10-20 gold)</p>
+    <form action="/process_money" method="post">
+      <input type="hidden" name="building" value="farm" />
+      <input type="submit" value="Find Gold!"/>
+    </form>
+  </div>
+
+  <div class="getmoney">
+    <h3>Cave</h3>
+    <p>(earns 5-10 gold)</p>
+    <form action="/process_money" method="post">
+      <input type="hidden" name="building" value="cave" />
+      <input type="submit" value="Find Gold!"/>
+    </form>
+  </div>
+
+  <div class="getmoney">
+    <h3>House</h3>
+    <p>(earns 2-5 gold)</p>
+    <form action="/process_money" method="post">
+      <input type="hidden" name="building" value="house" />
+      <input type="submit" value="Find Gold!"/>
+    </form>
+  </div>
+
+
+  <div class="getmoney">
+    <h3>Casino</h3>
+    <p>(earns/takes 0-50 gold)</p>
+    <form action="/process_money" method="POST">
+      <input type="hidden" name="building" value="casino" />
+      <input type="submit" value="Find Gold!"/>
+    </form>
+  </div>
+
+  <div>
+    <p>Activities</p>
+    
+    <textarea rows=20 cols=100>  
+      {% for values in session.trip_history %}
+      {{values}} 
+      {% endfor %}
+    </textarea>
+
+  </div>
+  <a href="/reset">Reset</a><br>
+
+
+
+</body>
+</html>
