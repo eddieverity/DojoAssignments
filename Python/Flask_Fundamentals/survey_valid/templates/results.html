@@ -1,0 +1,20 @@
+<html>
+<head>
+  <title>Validated Results</title>
+
+</head>
+<body>
+  <div>
+    <h3>Submitted Info</h3>
+    
+   <p>Name: {{session['name']}}
+    <p>Dojo Location: {{session["location"]}}</p>
+    <p>Favorite Language: {{session['language']}}</p>
+    <p>Comment: {{session['comments']}}</p>
+    <form action='/' method='GET'>
+      <input type='submit' value='Go Back'>
+    </form>
+    
+  </div>
+</body>
+</html>
