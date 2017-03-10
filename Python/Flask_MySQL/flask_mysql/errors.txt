@@ -1,0 +1,65 @@
+Traceback (most recent call last):
+  File "server.py", line 6, in <module>
+    mysql = MySQLConnector(app, 'world')
+  File "/Users/edwardverity/Desktop/DojoAssignments/Python/Flask_MySQL/flask_mysql/mysqlconnection.py", line 40, in MySQLConnector
+    return MySQLConnection(app, db)
+  File "/Users/edwardverity/Desktop/DojoAssignments/Python/Flask_MySQL/flask_mysql/mysqlconnection.py", line 9, in __init__
+    'database': bill, # we got db as an argument
+NameError: global name 'bill' is not defined
+
+changed global name to other than 'db'
+
+
+Traceback (most recent call last):
+  File "server.py", line 8, in <module>
+    print mysql.query_db("SELECT * FROM languages")
+  File "/Users/edwardverity/Desktop/DojoAssignments/Python/Flask_MySQL/flask_mysql/mysqlconnection.py", line 22, in query_db
+    result = self.db.session.execute(text(query), data)
+  File "/Users/edwardverity/Desktop/myEnvironments/py2FlaskEnv/lib/python2.7/site-packages/sqlalchemy/orm/scoping.py", line 157, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "/Users/edwardverity/Desktop/myEnvironments/py2FlaskEnv/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 1107, in execute
+    bind, close_with_result=True).execute(clause, params or {})
+  File "/Users/edwardverity/Desktop/myEnvironments/py2FlaskEnv/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 971, in _connection_for_bind
+    engine, execution_options)
+  File "/Users/edwardverity/Desktop/myEnvironments/py2FlaskEnv/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 403, in _connection_for_bind
+    conn = bind.contextual_connect()
+  File "/Users/edwardverity/Desktop/myEnvironments/py2FlaskEnv/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2103, in contextual_connect
+    self._wrap_pool_connect(self.pool.connect, None),
+  File "/Users/edwardverity/Desktop/myEnvironments/py2FlaskEnv/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2142, in _wrap_pool_connect
+    e, dialect, self)
+  File "/Users/edwardverity/Desktop/myEnvironments/py2FlaskEnv/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1456, in _handle_dbapi_exception_noconnection
+    exc_info
+  File "/Users/edwardverity/Desktop/myEnvironments/py2FlaskEnv/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 203, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/Users/edwardverity/Desktop/myEnvironments/py2FlaskEnv/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 2138, in _wrap_pool_connect
+    return fn()
+  File "/Users/edwardverity/Desktop/myEnvironments/py2FlaskEnv/lib/python2.7/site-packages/sqlalchemy/pool.py", line 387, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/Users/edwardverity/Desktop/myEnvironments/py2FlaskEnv/lib/python2.7/site-packages/sqlalchemy/pool.py", line 766, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/Users/edwardverity/Desktop/myEnvironments/py2FlaskEnv/lib/python2.7/site-packages/sqlalchemy/pool.py", line 516, in checkout
+    rec = pool._do_get()
+  File "/Users/edwardverity/Desktop/myEnvironments/py2FlaskEnv/lib/python2.7/site-packages/sqlalchemy/pool.py", line 1138, in _do_get
+    self._dec_overflow()
+  File "/Users/edwardverity/Desktop/myEnvironments/py2FlaskEnv/lib/python2.7/site-packages/sqlalchemy/util/langhelpers.py", line 60, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "/Users/edwardverity/Desktop/myEnvironments/py2FlaskEnv/lib/python2.7/site-packages/sqlalchemy/pool.py", line 1135, in _do_get
+    return self._create_connection()
+  File "/Users/edwardverity/Desktop/myEnvironments/py2FlaskEnv/lib/python2.7/site-packages/sqlalchemy/pool.py", line 333, in _create_connection
+    return _ConnectionRecord(self)
+  File "/Users/edwardverity/Desktop/myEnvironments/py2FlaskEnv/lib/python2.7/site-packages/sqlalchemy/pool.py", line 461, in __init__
+    self.__connect(first_connect_check=True)
+  File "/Users/edwardverity/Desktop/myEnvironments/py2FlaskEnv/lib/python2.7/site-packages/sqlalchemy/pool.py", line 651, in __connect
+    connection = pool._invoke_creator(self)
+  File "/Users/edwardverity/Desktop/myEnvironments/py2FlaskEnv/lib/python2.7/site-packages/sqlalchemy/engine/strategies.py", line 105, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/Users/edwardverity/Desktop/myEnvironments/py2FlaskEnv/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 393, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/Users/edwardverity/Desktop/myEnvironments/py2FlaskEnv/lib/python2.7/site-packages/MySQLdb/__init__.py", line 81, in Connect
+    return Connection(*args, **kwargs)
+  File "/Users/edwardverity/Desktop/myEnvironments/py2FlaskEnv/lib/python2.7/site-packages/MySQLdb/connections.py", line 193, in __init__
+    super(Connection, self).__init__(*args, **kwargs2)
+sqlalchemy.exc.OperationalError: (_mysql_exceptions.OperationalError) (2003, "Can't connect to MySQL server on '127.0.0.1' (61)")
+
+
+can't connect on port 0000
