@@ -1,0 +1,13 @@
+<html>
+<head>
+  <title>Ninja Vanish</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheets/ninja_vanish.css')}}">
+</head>
+</head>
+<body>
+  <h1 id="ninja_msg">{{ session['msg'] }}</h1>
+
+  <img id="displayimg" src={{ session['img'] }}>
+  
+</body>
+</html>

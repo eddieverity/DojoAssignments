@@ -53,4 +53,3 @@ def validate():
   #   return redirect('/')
   
 
-app.run(debug=True)
