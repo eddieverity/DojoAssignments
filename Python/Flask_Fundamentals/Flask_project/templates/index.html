@@ -1,0 +1,26 @@
+<html>
+<head>
+  <title>Flask homepage</title>
+</head>
+<body>
+  <h1>Flask Project Home, click on the Lagomorphs!</h1>
+  <a href="/rabbits">Rabbits</a><br>
+  <a href="/pica">Pica</a><br>
+  <a href="/hares">Hares</a><hr>
+  {% if session.user_name %}
+  <a href="/logout">Log Out</a><br>
+  {{session['user_name']}}<hr>
+  
+  {% for values in session.trip_history %}
+  {{values}} <br>
+  {% endfor %}
+  
+  {% else %}
+  <a href="/login">Log in</a><br>
+  {% endif %}
+
+
+
+
+</body>
+</html>

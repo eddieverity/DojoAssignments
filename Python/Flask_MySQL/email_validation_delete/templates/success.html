@@ -1,0 +1,23 @@
+<html>
+<head>
+  <title>Success Page</title>
+  <link href="{{ url_for('static', filename='email_validation.css') }}" rel="stylesheet"> 
+</head>
+<body>
+  <h3>The email address you entered {{ session['email'] }} is a VALID email address!  Thank you!</h3>
+  <ul>Email Addresses Entered:
+    {% for email in emails %}
+      <li>ID# {{ email['id'] }} {{ email['email'] }}  ***Created At***  {{ email['created_at'] }} </li>
+    {% endfor %}
+  </ul>
+  <p>Delete a record by ID#</p>
+
+  <form action='/delete' method="POST">
+    <label for="email">ID#</label>
+    <input type="text" name="id_del" value="">
+    <input type="submit" name="id_del" value="id_del">
+  </form>
+
+
+</body>
+</html>
