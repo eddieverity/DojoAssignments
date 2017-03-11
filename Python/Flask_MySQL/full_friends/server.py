@@ -21,33 +21,37 @@ def create():
     # Run query, with dictionary values injected into the query.
     mysql.query_db(query, data)
     return redirect('/')
-@app.route('/friends/<friend_id>')
+@app.route('/friends/<friend_id>', methods=['POST', 'GET'])
 def show(friend_id):
     # Write query to select specific user by id. At every point where
     # we want to insert data, we write ":" and variable name.
-    query = "SELECT * FROM friends WHERE id = :specific_id"
+    query = "SELECT * FROM friends WHERE id = :friend_id"
     # Then define a dictionary with key that matches :variable_name in query.
-    data = {'specific_id': friend_id}
+    data = {'friend_id': friend_id}
+    print query, data
     # Run query with inserted data.
     friends = mysql.query_db(query, data)
     # Friends should be a list with a single object,
     # so we pass the value at [0] to our template under alias one_friend.
-    return render_template('index.html', one_friend=friends[0])
-@app.route('/update_friend/<friend_id>', methods=['POST'])
+    print friends[0]
+    return render_template('edit.html', one_friend=friends[0])
+@app.route('/friends/<friend_id>/edit', methods=['POST'])
 def update(friend_id):
     query = "UPDATE friends SET first_name = :first_name, last_name = :last_name, occupation = :occupation WHERE id = :id"
     data = {
-             'first_name': request.form['first_name'], 
-             'last_name':  request.form['last_name'],
-             'occupation': request.form['occupation'],
-             'id': friend_id
-           }
+    'first_name': request.form['first_name'], 
+    'last_name':  request.form['last_name'],
+    'occupation': request.form['occupation'],
+    'id': friend_id
+    }
     mysql.query_db(query, data)
     return redirect('/')
-@app.route('/remove_friend/<friend_id>', methods=['POST', 'GET'])
+@app.route('/friends/<friend_id>/delete', methods=['POST'])
 def delete(friend_id):
-  query = "DELETE FROM friends WHERE id = :id"
-  data = {'id': friend_id}
-  mysql.query_db(query, data)
-  return redirect('/')
+    query = "DELETE FROM friends WHERE id = :id"
+    data = {
+    'id': friend_id
+    }
+    mysql.query_db(query, data)
+    return redirect('/')
 app.run(debug=True)
