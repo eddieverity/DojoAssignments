@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <h1>Welcome to the Community {{session.email}}!</h1>
+
+    {% if all_users %}
+    <table>
+        <tr>
+            <th>id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Date Joined</th>
+        </tr>
+        {% for user in all_users %}
+        <tr>
+            <td>{{user.id}}</td>
+            <td>{{user.first_name}}</td>
+            <td>{{user.last_name}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.created_at}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %} 
+
+    {% if session.user_id %}
+        <a href="/logout">Logout</a> 
+    {% else %}
+        <a href="/login">Login</a> 
+    {% endif %}
+
+
+
+</body>
+
+</html>

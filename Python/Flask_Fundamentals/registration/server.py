@@ -52,4 +52,4 @@ def validate():
   #   flash("Please fill out all fields and keep comments less than 120 characters")
   #   return redirect('/')
   
-
+app.run(debug=True)
