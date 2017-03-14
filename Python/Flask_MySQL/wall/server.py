@@ -18,12 +18,12 @@ def index():
         all_comments = mysql.query_db('select * from comments')
 
         return render_template('wall.html', all_users=all_users, all_comments=all_comments, all_messages=all_messages)
-    return render_template('login.html')
+    return redirect('/login')
 
 @app.route('/login')
 def login():
     if 'user_id' in session:
-        return redirect('/wall')
+        return redirect('/')
     return render_template('login.html')
 
 @app.route('/message', methods=['POST'])
@@ -92,6 +92,8 @@ def register():
     password = request.form['html_password']
     confirm = request.form['html_confirm']
 
+    all_users = mysql.query_db('select * from users')
+    print all_users
     if len(first_name) < 2:
         flash('First name must be at least 2 characters long!')
         is_valid = False
@@ -101,6 +103,15 @@ def register():
     if email_regex.search(email) is None:
         flash('Invalid email address!')
         is_valid = False
+
+    parameters = {}
+    parameters['email'] = email
+    users = mysql.query_db('select * from users where email = :email', parameters)
+    if len(users) != 0:
+        is_valid=False
+        flash('email already in use')
+
+
     if len(password) < 8:
         flash('Passwords must be at least 8 characters long!')
         is_valid = False

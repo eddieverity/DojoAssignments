@@ -6,6 +6,14 @@
   margin: 0;
   border-collapse: collapse;
 }
+div {
+  background-color:gray;
+  width:200px;
+
+  color:white;
+  padding:15px;
+  margin-bottom:50px;
+}
 
 label {
     display: block;

@@ -24,25 +24,25 @@
 
     {% if all_messages %}
         {% for message in all_messages %}
+            
             {% for user in all_users %}
                 {% if message.user_id == user.id %}
-                    <p class="message"><em>posted by - {{user.first_name}} {{user.last_name}} at {{message.created_at}}</em></p>
+                    <p class="message"><em>message posted by - {{user.first_name}} {{user.last_name}} at {{message.created_at}}</em></p>
                 {% endif %}
             {% endfor %}
             
-
             <p class="message">{{message.message}}</p>
-            
-
 
             {% for comment in all_comments%}
                 {% if comment.message_id == message.id %}
+                    
                     {% for user in all_users%}
                         {% if comment.user_id == user.id %}
-                        <p class="comment"><em>posted by={{user.first_name}} {{user.last_name}} at {{comment.created_at}}</em></p>
+                        <p class="comment"><em>comment posted by={{user.first_name}} {{user.last_name}} at {{comment.created_at}}</em></p>
                         <p class="comment">{{comment.comment}}</p>
                         {% endif %}
                     {% endfor %}
+                    
                 {% endif %}
             {% endfor %}
 
