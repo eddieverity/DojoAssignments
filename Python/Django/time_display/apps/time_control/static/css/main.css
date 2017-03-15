@@ -1,0 +1,15 @@
+body {
+  color:blue;
+  background-color:yellow;
+}
+h1 {
+  text-align:center;
+}
+.line {
+  margin-left:33%;
+  width:600px;
+  height:250px;
+  border:3px solid black;
+  font-size:80px;
+  text-align:center;
+}
