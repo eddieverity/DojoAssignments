@@ -1,0 +1,23 @@
+<html>
+<head>
+  <title>Random word generator</title>
+</head>
+<body>
+  <h1>Random Word Generator</h1>
+  <p>Attempt # {{request.session.counter}}</p>
+  
+  <h1>Your randomly generated word is:</h1>
+  <p>Word:  {{ somekey }}</p>
+
+
+  <form action="/random_word" method="POST">
+    {% csrf_token %}
+    <input type="submit" value="NEW WORD">
+  </form>
+
+  <form action="/reset" method="POST">
+    {% csrf_token %}
+    <input type="submit" value="RESET ATTEMPTS">
+  </form>
+</body>
+</html>
