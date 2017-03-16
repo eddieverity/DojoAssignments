@@ -12,8 +12,7 @@ def index(request):
     request.session['counter'] += 1
   else:
     request.session['counter'] = 1
-  counter = request.session['counter']
-  return render(request, 'random_app/index.html', unique_word, counter)
+  return render(request, 'random_app/index.html', unique_word)
 
 def random_word(request):
   if request.method == "POST":
