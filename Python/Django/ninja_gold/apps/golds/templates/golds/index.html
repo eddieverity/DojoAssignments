@@ -1,0 +1,61 @@
+<html>
+<head>
+  <title>Ninja Gold</title>
+  {% load staticfiles %}
+  <link rel="stylesheet" href="{% static 'golds/css/styles.css' %}">
+</head>
+<body>
+  <h4>Your Gold:</h4>
+  <input type="text" value={{request.session.gold}}>
+ 
+
+  <div>
+    <h3>Farm</h3>
+    <p>earns 10-20 gold</p>
+    <form action="/process_money" method="POST">{% csrf_token %}
+      <input type="hidden" name="building" value="farm">
+      <input type="submit" value="Find Gold!">
+    </form>
+  </div>
+
+  <div>
+    <h3>Cave</h3>
+    <p>earns 5-10 gold</p>
+    <form action="/process_money" method="POST">{% csrf_token %}
+      <input type="hidden" name="building" value="cave">
+      <input type="submit" value="Find Gold!">
+    </form>
+  </div>
+
+  <div>
+    <h3>House</h3>
+    <p>earns 2-5 gold</p>
+    <form action="/process_money" method="POST">{% csrf_token %}
+      <input type="hidden" name="building" value="house">
+      <input type="submit" value="Find Gold!">
+    </form>
+  </div>
+
+  <div>
+    <h3>Casino</h3>
+    <p>earns/takes 0-50 gold</p>
+    <form action="/process_money" method="POST">{% csrf_token %}
+      <input type="hidden" name="building" value="casino">
+      <input type="submit" value="Find Gold!">
+    </form>
+  </div>
+
+  <textarea rows=20 cols=100>
+    {% for values in request.session.trip_history %}
+    {{values}}
+    {% endfor %}
+  </textarea>
+
+  <form action="/reset" method="POST">{% csrf_token %}
+    <input type="submit" value="Reset">
+  </form>
+  
+
+
+</body>
+</html>

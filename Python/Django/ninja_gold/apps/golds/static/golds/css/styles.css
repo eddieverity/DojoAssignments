@@ -1,0 +1,9 @@
+div {
+  display:inline-block;
+  border:3px solid black;
+}
+
+.events {
+  height:300px;
+  width:600px;
+}
