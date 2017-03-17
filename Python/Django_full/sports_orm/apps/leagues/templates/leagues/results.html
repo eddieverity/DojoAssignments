@@ -1,0 +1,22 @@
+<html>
+<head>
+  <title>Results</title>
+</head>
+<body>
+  <h1>{{ title }}</h1>
+  <p>Results:</p>
+
+  <ul>
+      {% for idx in results %}
+        <li>{{ idx }} </li>
+      {% empty %}
+        <p>No teams found.  Try <code>python manage.py loaddata data.json</code>, or, if that doesn't work, going <a href="{% url 'make_data' %}">here</a> (but be prepared to wait).</p>
+      {% endfor %}
+  </ul>
+
+  <form action="/go_back" method="POST">
+    {% csrf_token %}
+    <input type="submit" name="" value="Click to go back to chapters">
+  </form>
+</body>
+</html>

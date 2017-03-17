@@ -1,0 +1,108 @@
+<html>
+<head>
+  <title>Click Links for sporks</title>
+</head>
+<body>
+
+  <form action="/baseball_leagues" method="POST">
+    {% csrf_token %}
+    <input type="submit" name="" value="Click to see all baseball leagues">
+  </form>
+
+
+  <form action="/all_women_leagues" method="POST">
+    {% csrf_token %}
+    <input type="submit" name="" value="Click to see all womens' leagues">
+  </form>
+
+
+  <form action="/all_leagues_hockey" method="POST">
+    {% csrf_token %}
+    <input type="submit" name="" value="Leagues where sport is hockey">
+  </form>
+
+
+  <form action="/other_than_football" method="POST">
+    {% csrf_token %}
+    <input type="submit" name="" value="Sports other than football">
+  </form>
+
+
+  <form action="/all_conferences" method="POST">
+    {% csrf_token %}
+    <input type="submit" name="" value="Leagues that call themselves conferences">
+  </form>
+
+
+  <form action="/atlantic_leagues" method="POST">
+    {% csrf_token %}
+    <input type="submit" name="" value="Atlantic Leagues">
+  </form>
+
+
+  <form action="/teams_dallas" method="POST">
+    {% csrf_token %}
+    <input type="submit" name="" value="All teams in Dallas">
+  </form>
+
+
+  <form action="/raptors" method="POST">
+    {% csrf_token %}
+    <input type="submit" name="" value="All teams named Raptors">
+  </form>
+
+
+  <form action="/all_city" method="POST">
+    {% csrf_token %}
+    <input type="submit" name="" value="all teams who's location includes 'city' ">
+  </form>
+
+
+  <form action="/all_t" method="POST">
+    {% csrf_token %}
+    <input type="submit" name="" value="all teams who's names begin with T">
+  </form>
+
+
+  <form action="/location_alpha" method="POST">
+    {% csrf_token %}
+    <input type="submit" name="" value="all teams ordered by location, alphabetically">
+  </form>
+
+
+  <form action="/team_reverse" method="POST">
+    {% csrf_token %}
+    <input type="submit" name="" value="all teams, reverse alpha on teamname">
+  </form>
+
+
+  <form action="/all_cooper" method="POST">
+    {% csrf_token %}
+    <input type="submit" name="" value="every player with last name Cooper">
+  </form>
+
+
+  <form action="/all_josh" method="POST">
+    {% csrf_token %}
+    <input type="submit" name="" value="Every player with first name Joshua">
+  </form>
+
+
+  <form action="/except_josh" method="POST">
+    {% csrf_token %}
+    <input type="submit" name="" value="Every Cooper except Joshua">
+  </form>
+
+
+  <form action="/alex_wyatt" method="POST">
+    {% csrf_token %}
+    <input type="submit" name="" value="every player with first name Alexander OR Wyatt">
+  </form>
+
+
+
+
+
+
+</body>
+</html>
