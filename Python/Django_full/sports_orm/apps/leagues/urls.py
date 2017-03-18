@@ -24,6 +24,25 @@ urlpatterns = [
   url(r'^except_josh', views.except_josh, name='chapters'),
   url(r'^alex_wyatt', views.alex_wyatt, name='chapters'),
 
+  #ORM2
+
+  url(r'^team_atlantic', views.team_atlantic, name='chapters'),
+  url(r'^current_penguins', views.current_penguins, name='chapters'),
+  url(r'^current_icbc', views.current_icbc, name='chapters'),
+  url(r'^current_lopez', views.current_lopez, name='chapters'),
+  url(r'^all_football', views.all_football, name='chapters'),
+  url(r'^team_current_sophia', views.team_current_sophia, name='chapters'),
+  url(r'^league_current_sophia', views.league_current_sophia, name='chapters'),
+  url(r'^flores_norough', views.flores_norough, name='chapters'),
+
+  url(r'^sam_evans', views.sam_evans, name='chapters'),
+  url(r'^tiger_cat', views.tiger_cat, name='chapters'),
+  url(r'^formerly_viking', views.formerly_viking, name='chapters'),
+  url(r'^gray_before_colts', views.gray_before_colts, name='chapters'),
+  url(r'^josh_in_afabp', views.josh_in_afabp, name='chapters'),
+  url(r'^team_greaterthan_twelve', views.team_greaterthan_twelve, name='chapters'),
+  url(r'^player_sorted', views.player_sorted, name='chapters'),
+
   url(r'^go_back', views.go_back),
 
 ]

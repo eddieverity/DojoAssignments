@@ -4,6 +4,8 @@
 </head>
 <body>
 
+<h1>ORM1</h1>
+
   <form action="/baseball_leagues" method="POST">
     {% csrf_token %}
     <input type="submit" name="" value="Click to see all baseball leagues">
@@ -100,8 +102,96 @@
   </form>
 
 
+<h1>ORM2</h1>
+
+  <form action="/team_atlantic" method="POST">
+    {% csrf_token %}
+    <input type="submit" name="" value="all teams in the Atlantic Soccer Conference">
+  </form>
+
+  <form action="/current_penguins" method="POST">
+    {% csrf_token %}
+    <input type="submit" name="" value="all (current) players on the Boston Penguins">
+  </form>
+
+  <form action="/current_icbc" method="POST">
+    {% csrf_token %}
+    <input type="submit" name="" value="all (current) players in the International Collegiate Baseball Conference">
+  </form>
 
 
+  <form action="/current_lopez" method="POST">
+    {% csrf_token %}
+    <input type="submit" name="" value="all (current) players in the American Conference of Amateur Football with last name 'Lopez'">
+  </form>
+
+  
+  <form action="/all_football" method="POST">
+    {% csrf_token %}
+    <input type="submit" name="" value="all football players">
+  </form>
+
+  
+  <form action="/team_current_sophia" method="POST">
+    {% csrf_token %}
+    <input type="submit" name="" value="all teams with a (current) player named 'Sophia'">
+  </form>
+
+  
+  <form action="/league_current_sophia" method="POST">
+    {% csrf_token %}
+    <input type="submit" name="" value="all leagues with a (current) player named 'Sophia'">
+  </form>
+
+  
+  <form action="/flores_norough" method="POST">
+    {% csrf_token %}
+    <input type="submit" name="" value="everyone with the last name 'Flores' who DOESN'T (currently) play for the Washington Roughriders">
+  </form>
+
+  
+  <form action="/sam_evans" method="POST">
+    {% csrf_token %}
+    <input type="submit" name="" value="all teams, past and present, that Samuel Evans has played with">
+  </form>
+
+  
+  <form action="/tiger_cat" method="POST">
+    {% csrf_token %}
+    <input type="submit" name="" value="all players, past and present, with the Manitoba Tiger-Cats">
+  </form>
+
+  
+  <form action="/formerly_viking" method="POST">
+    {% csrf_token %}
+    <input type="submit" name="" value="all players who were formerly (but aren't currently) with the Wichita Vikings">
+  </form>
+
+  
+  <form action="/gray_before_colts" method="POST">
+    {% csrf_token %}
+    <input type="submit" name="" value="every team that Jacob Gray played for before he joined the Oregon Colts">
+  </form>
+
+  
+  <form action="/josh_in_afabp" method="POST">
+    {% csrf_token %}
+    <input type="submit" name="" value="everyone named 'Joshua' who has ever played in the Atlantic Federation of Amateur Baseball Players">
+  </form>
+
+  
+  <form action="/team_greaterthan_twelve" method="POST">
+    {% csrf_token %}
+    <input type="submit" name="" value="all teams that have had 12 or more players, past and present">
+  </form>
+
+  
+  <form action="/player_sorted" method="POST">
+    {% csrf_token %}
+    <input type="submit" name="" value="all players, sorted by the number of teams they've played for">
+  </form>
+
+  
 
 
 </body>
