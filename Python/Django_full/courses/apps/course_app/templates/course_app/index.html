@@ -1,0 +1,38 @@
+<html>
+<head>
+  <title>Course App</title>
+</head>
+<body>
+  <h1>Add a new course</h1>
+  <form action="/add" method="POST">
+    {% csrf_token %}
+    <p>Name:</p>
+      <input type='text' name="name">
+    <p>Description:</p>
+      <input type='text' name="desc">
+      <input type="submit" name="add" value="Add">
+  </form>
+
+  <h1>Courses</h1>
+  <table>
+    <th>Course Name</th>
+    <th>Date Added</th>
+    <th>Description</th>
+    <th>Actions</th>
+
+      {% for idx in courses %}
+
+        <tr>
+          <td>{{ idx.name }}</td>
+          <td>{{ idx.created_at }}</td>
+          <td>{{ idx.descriptions.desc }}</td>
+          <td><a href="/delete/{{idx.id}}">Delete</a></td>
+        </tr>
+
+      {% endfor %}
+  
+  </table>
+    
+
+</body>
+</html>
