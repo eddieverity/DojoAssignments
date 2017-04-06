@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <title>
+      Survey Form
+    </title>
+  </head>
+  <body>
+    <div>
+      <form action='/result' method='post'>
+        <label>Your Name:</label>
+        <input type="text" name="name"><br>
+        <label>Dojo Location:</label>
+        <select name="location">
+          <option value="mountain_view">Mountain View</option>
+          <option value="chicago">Chicago</option>
+          <option value="seattle">Seattle</option>
+          <option value="sealab">SeaLab 2021</option>
+          <option value="moon">Moon Base Zappa</option>
+        </select><br>
+        <label>Favorite Language:</label>
+        <select name="language">
+          <option value="JavaScript">JavaScript</option>
+          <option value="Python">Python</option>
+          <option value="Ruby">Ruby</option>
+          <option value="sanskrit">Sanskrit</option>
+        </select><br>
+        <label>Comment (optional):</label>
+        <input type="text" name="comment"><br>
+        <input type="submit" value='create_user'>
+      </form>
+    </div>
+  </body>
+</html>

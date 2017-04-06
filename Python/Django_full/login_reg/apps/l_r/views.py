@@ -88,7 +88,7 @@ def login(request):
 
     # print pw_hash
     # print curr_user.password
-
+    # it's not 'if this hashed password = entered hashed password'
     l_password=request.POST['l_password'].encode(encoding="utf-8")
     if bcrypt.hashpw(l_password, curr_user.password.encode("utf-8")) == curr_user.password:
       request.session['s_first_name']=curr_user.first_name

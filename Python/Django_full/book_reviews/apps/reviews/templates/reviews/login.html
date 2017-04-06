@@ -1,0 +1,47 @@
+<html>
+<head>
+  <title>Welcome</title>
+</head>
+<body>
+  <h1>Welcome!</h1>
+  <h3>Register</h3>
+  <form action="{% url 'reviews:register' %}" method="POST">
+    {% csrf_token %}
+    <label>Name:</label>
+    <input type="text" name="name"><br>
+
+    <label>Alias:</label>
+    <input type="text" name="alias"><br>
+
+    <label>Email:</label>
+    <input type="email" name="email"><br>
+        
+    <label>Password:</label>
+    <input type="password" name="password"><br>
+    
+
+    <label>Confirm Password:</label>
+    <input type="password" name="confirm"><br>
+
+    <input type="submit" name="submit" value="Register">
+  </form>
+
+  <h1>Login</h1>
+  <form action="{% url 'reviews:login' %}" method="POST">
+    {% csrf_token %}
+    <label>Email:</label>
+    <input type="email" name="l_email"><br>
+
+    <label>Password:</label>
+    <input type="password" name="l_password"><br>
+
+    <input type="submit" name="submit" value="Login">
+  </form>
+
+  {% if messages %}
+    {% for message in messages %}
+      {{message}}
+    {% endfor %}
+  {% endif %}
+</body>
+</html>

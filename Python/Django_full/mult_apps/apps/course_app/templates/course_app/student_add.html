@@ -1,0 +1,44 @@
+<html>
+<head>
+  <title>Add a Student to a Course</title>
+</head>
+<body>
+  <h1>Add a Student to a Course</h1>
+
+
+  <form action="{% url 'course_app:enroll' %}" method="POST">
+    {% csrf_token %}
+    dropdown of users
+    <select name="student">
+      {% for idx in student %}
+      <option value="{{idx.id}}"> {{idx.first_name}} {{idx.last_name}} </option>
+      {% endfor %}
+    </select>
+    dropdown of courses
+    <select name="course">
+      {% for idx in course %}
+      <option value="{{idx.id}}"> {{idx.name}} </option>
+      {% endfor %}
+    </select>
+    <input type="submit" name="submit" value="Enroll Student">
+    
+  </form>
+
+  for loop of courses listing # enrolled
+  <table>
+    <th>Course</th>
+    <th>Title</th>
+    <th>Number of users</th>
+
+  {% for idx in course %}
+    <tr>
+      <td>{{idx.id}}</td>
+      <td>{{idx.name}}</td>
+      <td>{{idx.count}}</td>
+    </tr>
+  {% endfor %}
+
+
+
+</body>
+</html>

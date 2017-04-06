@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <title>
+      Survey Form
+    </title>
+  </head>
+  <body>
+    <div>
+      <h1>Submitted Information</h1>
+        <% for (var i=0;i<user.length;i++) { %>
+        <h3>Name: <%= user[i].name %></h3>
+        <h3>Location: <%= user[i].location %></h3>
+        <h3>Language: <%= user[i].language %></h3>
+        <h3>Comment: <%= user[i].comment %></h3>
+        <hr>
+        <% } %>
+      <form action="/">
+        <input type="submit" value="go_back">
+      </form>
+    </div>
+  </body>
+</html>

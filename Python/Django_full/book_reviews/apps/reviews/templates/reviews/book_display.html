@@ -1,0 +1,31 @@
+<html>
+<head>
+  <title>Add a Book and Review</title>
+</head>
+<body>
+  {% for idx in books %}
+  <h1>Book: {{idx.name}}</h1>
+  <h2>Author: {{idx.author}}</h2>
+  {% endfor %}
+  <hr>
+  
+
+  <p>Reviews</p><hr>
+  {% for idx in reviews %}
+    
+  {% endfor %}
+
+  <p>interior loop for star ratings</p>
+  <p>poster name link to route to user.html based on user.id followed by review</p>
+  <p>review created_at</p>
+  <p>if poster name = session user id add 'delete this review' link</p>
+
+  <hr>
+  <p>paste add a review text box, linking book.id from url with rating</p>
+  <p>submit for review form rerouting to book_display</p>
+  </hr>
+  <a href="{% url 'reviews:books' %}">Home</a>
+  <a href="{% url 'reviews:logout' %}">Log Out</a>
+
+</body>
+</html>

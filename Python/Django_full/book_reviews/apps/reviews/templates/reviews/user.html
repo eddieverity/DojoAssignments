@@ -1,0 +1,22 @@
+<html>
+<head>
+  <title>User Reviews</title>
+</head>
+<body>
+  <a href="{% url 'reviews:books' %}">Home</a>
+  <a href="{% url 'reviews:add' %}">Add Book and Review</a>
+  <a href="{% url 'reviews:logout' %}">Log Out</a>
+
+  
+  <p>User Alias: {{user.alias}}</p>
+  <p>Name: {{user.name}}</p>
+  <p>Email: {{user.email}}</p>
+  <p>Total reviews: {{total_reviews}}</p>
+  
+
+  <hr>
+  <p>Posted reviews on the following books:</p>
+  <p>Loop for reviews where user_id = users/id</p>
+
+</body>
+</html>

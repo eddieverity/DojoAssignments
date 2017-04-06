@@ -1,0 +1,24 @@
+<html>
+<head>
+  <title>Books</title>
+</head>
+<body>
+  <h3>Welcome {{request.session.alias}} you have successfully {{request.session.msg}}</h3>
+  <p>Recent book reviews:</p>
+  {% for idx in current_reviews %}
+    <a href="{% url 'reviews:book_display' book_id=idx.book_id %}">{{idx.book.name}}</a>
+    <p>rating: {{idx.rating}} </p>
+    <a href="{% url 'reviews:user_display' user_id=idx.poster_id %}">{{idx.poster.name}}</a>
+    {{idx.created_at}}
+  {% endfor %}
+  <hr>  
+  <p>Other books with reviews:</p>
+  <div style="height:100px; width:100px; overflow:scroll">
+  {% for idx in books %}
+    <a href="{% url 'reviews:book_display' book_id=idx.id %}"> {{idx.name}} </a><br>
+  {% endfor %}
+  </div>
+  <a href="{% url 'reviews:add' %}">Add a book and review</a>
+  <a href="{% url 'reviews:logout' %}">Log Out</a>
+</body>
+</html>

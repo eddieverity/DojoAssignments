@@ -1,0 +1,12 @@
+<html>
+<head>
+  <title>Time for Time</title>
+  {% load staticfiles %}
+  <!-- The line above tells Django to be ready to listen for static files -->
+  <link rel="stylesheet" href="{% static 'css/main.css' %}"media="screen" title="no title"  charset="utf-8"> 
+</head>
+<body>
+  <h1>The current date and time in Chicago is:</h1>
+  <div class="line">{{somekey }}</div>
+</body>
+</html>
