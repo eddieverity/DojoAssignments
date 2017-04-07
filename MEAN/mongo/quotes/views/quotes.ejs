@@ -1,0 +1,15 @@
+<html>
+<head>
+  <title>QuotingDojo</title>
+</head>
+<body>
+  <h3>Awesome Quotes</h3>
+
+  <hr>
+  <% for (var i=0;i<quote.length;i++) { %>
+    <h3>" <%= quote[i].quote %> "</h3>
+    <p>Posted by: <%= quote[i].name %> on: <%=quote[i].createdAt %></p>
+    <hr>
+  <% } %>
+</body>
+</html>
