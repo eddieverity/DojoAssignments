@@ -1,0 +1,24 @@
+<html ng-app='App'>
+  <head>
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js'></script>
+    <script type='text/javascript'>
+      var myAppModule = angular.module('App', []);
+      // the .controller() method adds a controller to the module
+      myAppModule.controller('MyControllingController', function ($scope){
+        $scope.myName = 'Eddie Spaghetti'; // your name!
+        $scope.myFavoriteLanguage = 'JavaScript';
+        $scope.myFavoriteJSLibrary = 'Angular';
+
+      });
+    </script>
+  </head>
+<body>
+  <div ng-controller='MyControllingController'>
+    {{myName}}<br>
+    {{myFavoriteLanguage}}<br>
+    {{myFavoriteJSLibrary}}<br>
+    <p>Hello, my name is {{myName}}, my favorite language is {{myFavoriteLanguage}}, because the {{myFavoriteJSLibrary}} library is so awesome</p>
+ 
+  </div>
+</body>
+</html>

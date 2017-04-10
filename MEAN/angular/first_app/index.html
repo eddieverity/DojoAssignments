@@ -1,0 +1,27 @@
+<html ng-app='myApp'>
+    <head>
+      <script src="bower_components/angular/angular.js"></script>
+      <script type='text/javascript'>
+        var myAppModule = angular.module('myApp', []);
+      </script>
+    </head>
+    <body>
+        <h1>ng-bind & angle brackets</h1>
+        <h3>{{ 49567 * 2243 }} </h3>
+        <h3 ng-bind='49567 * 2243'></h3>
+
+        <h1>ng-repeat to cycle through array</h1>
+        <div ng-init="arr_students=['Mike', 'John', 'Trey', 'India']">
+          <ul>
+            <li ng-repeat="student in arr_students">{{student}}</li>
+          </ul>   
+        </div>
+
+        <h1>ng-repeat on a json object</h1>
+        <div ng-init="obj_students=[{name: 'Mike', age: 34}, {name: 'John', age: 24}, {name: 'Trey', age: 24}, {name: 'India', age: 35}]">
+          <ul>
+              <li ng-repeat="student in obj_students">{{student.name}}, {{student.age}}</li>
+          </ul>   
+        </div>
+    </body>
+</html>
