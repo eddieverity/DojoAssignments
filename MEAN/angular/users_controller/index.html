@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" ng-app = 'app'>
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script src = 'bower_components/angular/angular.js'>
+  </script>
+  <script>
+  var app = angular.module('app', []);
+  app.controller('myController', ['$scope', function($scope){
+
+          $scope.users = [
+            {
+              first_name: 'Yuki',
+              last_name: 'Mats',
+              fav_language: 'Ruby'
+          }, 
+            {
+              first_name: 'Ryan',
+              last_name: 'Dahl',
+              fav_language: 'JavaScript'
+          }, 
+            {
+              first_name: 'Brendan',
+              last_name: 'Eich',
+              fav_language: 'JavaScript'
+          }, 
+            {
+              first_name: 'Guido',
+              last_name: 'Rossum',
+              fav_language: 'Python'
+            }
+          ];
+          console.log($scope.users)
+
+          $scope.addUser = function (){
+            // add to the array
+
+            $scope.newUser = {
+              first_name:$scope.first_name,
+              last_name:$scope.last_name,
+              fav_language:$scope.fav_language
+            };
+
+
+            $scope.users.push($scope.newUser); 
+            // clear the form values
+            console.log($scope.newUser);
+            }
+
+
+            $scope.deleteUser = function(userToDelete){
+            // filters and returns true(adding to itself) everything except userToDelete
+            $scope.users = $scope.users.filter( function(user){
+              return user !== userToDelete;
+            })
+          }
+
+
+    //printController will show the current $scope
+
+  }]);
+  </script>
+</head>
+<body>
+    <div ng-controller = "myController" id = "myController">
+      
+      <label>
+        First Name:
+      </label>
+      <input type="text" ng-model = 'first_name'><br>
+
+      <label>
+        Last Name:
+      </label>
+      <input type="text" ng-model = 'last_name'><br> 
+
+      <label>
+        Favorite Language:
+      </label>
+      <input type="text" ng-model = 'fav_language'><br>
+
+
+      <button ng-click = "addUser();">
+        Create User
+      </button>
+      <hr>
+
+
+      <table>
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Fav Language</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="user in users">
+            <td>{{user.first_name}}</td>
+            <td>{{user.last_name}}</td>
+            <td>{{user.fav_language}}</td>
+            <td><button ng-click='deleteUser(user)'>Delete</button></td>
+          </tr>
+        </tbody>
+
+      </table>
+
+
+
+    </div>
+</body>
+</html>
