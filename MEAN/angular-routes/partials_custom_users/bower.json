@@ -1,0 +1,22 @@
+{
+  "name": "partials_custom_users",
+  "homepage": "https://github.com/eddieverity/DojoAssignments",
+  "authors": [
+    "Edward Verity <eddieverity@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.4",
+    "angular-route": "^1.6.4",
+    "mongoose": "^4.9.4"
+  }
+}

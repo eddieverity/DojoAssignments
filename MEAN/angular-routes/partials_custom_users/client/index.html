@@ -1,0 +1,28 @@
+<html lang="en" ng-app="app">
+<head>
+  <title>New Page</title>
+  <script src="/angular/angular.js" charset="utf-8"></script>
+  <script src="/angular-route/angular-route.js" charset="utf-8"></script>
+  <script>
+    var app=angular.module('app', ['ngRoute']);
+    app.config(function($routeProvider) {
+    $routeProvider
+      .when('/', {
+        templateUrl: 'partials/customizeUsers.html'
+      })
+      .when('/userList', {
+        templateUrl: 'partials/userList.html'
+      })
+      .otherwise({
+        redirectTo: '/'
+      })
+    })
+  </script>
+
+</head>
+<body>
+  <a href="#!">Customize Users</a> |  <a href="#!/userList">User List</a>
+  <div ng-view>
+  </div>
+</body>
+</html>
