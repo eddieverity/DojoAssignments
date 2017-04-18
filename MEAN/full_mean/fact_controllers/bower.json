@@ -1,0 +1,21 @@
+{
+  "name": "fact_controllers",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Edward Verity <eddieverity@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/eddieverity/DojoAssignments",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.4",
+    "angular-route": "^1.6.4"
+  }
+}

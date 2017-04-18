@@ -7,8 +7,7 @@ var mongoose = require("mongoose");
 var Item = mongoose.model("Item");
 
 
-module.exports.index = function (request, response)
-{
+module.exports.index = function (request, response) {
     Item.find({}, function (err, items) {
         if (err) {
             console.log(err);
@@ -18,8 +17,19 @@ module.exports.index = function (request, response)
     });
 }
 
-module.exports.create = function (request, response)
+module.exports.show = function (request, response)
 {
+    console.log('hi');
+    Item.findOne({ _id: request.params.id }, function (err, item) {
+        if (err) {
+            console.log(err);
+        } else {
+            response.json({ message: "Item " + item._id, item: item });
+        }
+    });
+}
+
+module.exports.create = function (request, response) {
     var item = new Item({
         title: request.body.title,
         dueDate: request.body.dueDate

@@ -1,0 +1,29 @@
+<h1>Edit</h1>
+
+<form ng-submit="updateFriend()">
+  <label>First Name</label>
+    <input type="text" ng-model="friend.first_name" value="{{friend.first_name}}"><br>
+  <label>Last Name</label>
+    <input type="text" ng-model="friend.last_name" value="{{friend.last_name}}"><br>
+  <label>Birthday</label>
+    <input type="text" ng-model="friend.birthday" value="{{friend.birthday}}"><br>
+  <input type="submit" value="Update">
+</form>
+
+
+
+<h4>First Name: {{friend.first_name}}</h4>
+<h4>Last Name: {{friend.last_name}}</h4>
+<h4>Birthday: {{friend.birthday}}</h4> 
+<h4>Created At: {{friend.createdAt}}</h4>
+
+
+<a href="#!/new">New Friend</a>
+
+<!-- <ul>
+    <li ng-repeat="friend in friends">
+      {{ friend.first_name }} 
+      {{ friend.last_name }} 
+      birthday : {{ friend.birthday | date:'MM-dd-yyyy' }}
+    </li>
+</ul> -->

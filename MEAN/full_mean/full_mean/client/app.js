@@ -10,6 +10,10 @@ app.config(function ($routeProvider) {
         templateUrl: "/partials/items-index.html",
         controller: "itemsIndexController"
     })
+    .when("/items/:itemId", {
+        templateUrl: "/partials/view-item.html",
+        controller: "viewItemController"
+    })
     .otherwise("/index");
 });
 app.factory("itemFactory", function ($http) {
@@ -26,6 +30,11 @@ app.factory("itemFactory", function ($http) {
             finishedAddingItem();
         });
     }
+    factory.getItem = function (itemID, receivedItem) {
+      $http.get("/api/items/" + itemID).then(function (response) {
+        receivedItem(response.data.item);
+      });
+    }
     factory.allItems = function (receivedItems) {
         $http.get("/api/items").then(function (response) {
             items = response.data.items;
@@ -40,6 +49,7 @@ app.controller("itemsIndexController", function ($scope, itemFactory) {
         $scope.items = items;
     });
 });
+
 app.controller("newItemController", function ($scope, itemFactory) {
     $scope.addItem = function () {
         console.log("NEW ITEM:", $scope.item);
@@ -48,3 +58,13 @@ app.controller("newItemController", function ($scope, itemFactory) {
         });
     }
 });
+
+app.controller("viewItemController", function ($scope, $routeParams, itemFactory) {
+  //can sometimes get error on next line due to .itemId, might have to put into variable
+  itemFactory.getItem($routeParams.itemId, function (item) {
+    $scope.item=item;
+  });
+});
+
+
+

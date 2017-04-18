@@ -19,6 +19,6 @@ app.use(express.static(path.join(__dirname, "bower_components")));
 require("./server/config/database");
 require("./server/config/routes")(app);
 
-app.listen(3000, function () {
-    console.log("Listening on Port 3000");
+app.listen(4000, function () {
+    console.log("Listening on Port 4000");
 });
