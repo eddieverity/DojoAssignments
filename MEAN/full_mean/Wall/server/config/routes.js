@@ -13,13 +13,14 @@ module.exports = function (app)
     // app.delete('/api/friends/:id', friends.delete);
 
     app.post("/api/users", users.register);
-    app.post("/api/users", users.login);
+    app.post("/api/login", users.login);
     app.post("/api/posts", users.addpost);
     app.get("/api/posts", users.home);
 
     //added for comments
     app.post("/api/comments", users.addcomment);
     app.get("/api/comments", users.home);
+
     //^added for comments
 
 

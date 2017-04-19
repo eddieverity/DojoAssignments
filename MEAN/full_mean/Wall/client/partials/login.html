@@ -5,21 +5,31 @@
   <label>User Name:</label>
     <input type="text" ng-model="registerUser.username" minlength=2><br>
   <label>Email:</label>
-    <input type="text" ng-model="registerUser.email"><br>
+    <input type="email" ng-model="registerUser.email"><br>
       <label>Password:</label>
-    <input type="text" ng-model="registerUser.password" minlength=8><br>
-      <label>Confirm Passowrd:</label>
-    <input type="text" ng-model="registerUser.confirm" minlength=8><br>
+    <input type="password" ng-model="registerUser.password" minlength=8><br>
+      <label>Confirm Password:</label>
+    <input type="password" ng-model="registerUser.confirm" minlength=8><br>
   <input type='submit' value="Register User">
 </form>
 
+<div ng-messages=""></div>
 
 <h3>Login</h3>
-<form ng-sumbit = "login()">
+<form ng-submit = "login()">
   <label>Email</label>
-    <input type="text" ng-model="login.email"><br>
+    <input type="email" ng-model="logindata.email"><br>
   <label>Password</label>
-    <input type="text" ng-model="login.password"><br>
+    <input type="password" ng-model="logindata.password"><br>
     <input type="submit" value="Login">
-  </form>
+</form>
 
+<div ng-repeat="error in errors">
+    <ul ng-if="error">
+   
+        <li ng-if="error.errors.password">{{ error.errors.password.message }}</li>
+        <li ng-if="error.errors.email">{{ error.errors.email.message }}</li>
+
+        <li ng-if="error.login.message">{{ error.login.message }}</li>
+    </ul>
+</div>

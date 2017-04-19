@@ -13,13 +13,11 @@ module.exports.home = function (request, response) {
     //console.log(request.data)
 
     Post.find({}).populate("_author").then(function (posts) {
-        response.json({ posts: posts });
-    }).catch(function (err) {
-      console.log(err)
-    })
-
-    Comment.find({}).populate("_author _post").then(function (comments) {
-        response.json({ comments: comments });
+      Comment.find({}).populate("_author _post").then(function (comments) {
+          response.json({ posts: posts, comments: comments });
+      }).catch(function (err) {
+        console.log(err)
+      })
     }).catch(function (err) {
       console.log(err)
     })
@@ -29,18 +27,47 @@ module.exports.home = function (request, response) {
 
 //cmd+shft+p for sublime stuffs // install
 
-module.exports.login = function (request, response) {
-    User.findOne({_id: request.params.id}, function(err, user){  
-        response.json({user:user});
+module.exports.login = function(request, response) {
+    User.findOne({email: request.body.email}, function(err, user){ 
+
+      if(err){
+        console.log(err)
+        response.json({errors:err});
+      } 
+      else if(user&&user.validPassword(request.body.password)) {
+        response.json({
+          id:user._id,
+          username:user.username
+        });
+      }
+      else if(user&& !user.validPassword(request.body.password)) {
+        response.json({
+          errors: {
+            login: {
+              message: "Password isn't correct"
+            }
+          },
+
+        })
+      }
+      else {
+        response.json({
+          errors: {
+            login: {
+              message:"Email not found, try to register"
+            }
+          }
+        })
+      }
     })
 }
 
 module.exports.register = function (request, response) {
-
     var user = new User(request.body);
     user.save(function (err) {
         if (err) {
-            console.log(err);
+            response.json({errors: err})
+            // console.log(err);
         } else {
             response.json({ message: "Successfully Created User!", user: user });
         }
@@ -69,13 +96,3 @@ module.exports.addcomment = function (request, response) {
     })
 }
 
-
-// module.exports.delete = function (request, response) {
-//     Friend.remove({ _id: request.params.id}, function(err) {
-//         if(err){
-//             console.log(err)
-//         } else {
-//             resonse.json({message:"Friend Deleted"})
-//         }
-//     })
-// }

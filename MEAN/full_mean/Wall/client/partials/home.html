@@ -1,4 +1,5 @@
-<h3>this also somewhat works</h3>
+<h3>You are on the Wall-- how bou daaa, cash me ousside</h3>
+  <a href="/#!/" ng-click="logout()">Logout</a>
 
   <form ng-submit="addPost()">
     <label>Add Post:</label>
@@ -8,17 +9,17 @@
 
 
 
-  You are currently logged in as:{{user.username}} {{user.id}}
+  You are currently logged in as:{{user.username}} unique id: {{user.id}}
   <hr>
 
   <div ng-repeat="post in posts">
-    {{post.postText}} <em>posted by: {{post._author.username}}</em>
+    {{post.postText}} <em>posted by: {{post._author.username}} on {{post.createdAt|date:'medium'}}</em>
     <em><h4>Comments</h4></em>
     <div ng-repeat="comment in comments">
       
       <div ng-if="comment._post._id === post._id">
 
-        {{comment.commentText}} <em>Commented upon by: {{comment._author.username}}</em>
+        {{comment.commentText}} <em>Commented upon by: {{comment._author.username}} on {{comment.createdAt|date:'medium'}}</em>
       </div>
     </div>  
     <form ng-submit="addComment(post._id, newcomment)">
