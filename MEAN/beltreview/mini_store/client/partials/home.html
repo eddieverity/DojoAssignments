@@ -1,0 +1,22 @@
+<h1>Home</h1>
+
+<h3>Products</h3>
+<label>Filter Products</label>
+<input placeholder="Product name" type="text" ng-model="productFilter.name">
+<div ng-repeat="product in products| filter:productFilter track by $index">
+  <img src="{{product.img}}" width="200" >
+  <p>{{product.name}}</p>
+  <p>{{product.quantity}} left</p>
+</div>
+
+<h3>Recent Orders</h3>
+<div ng-repeat="order in orders | orderBy: '-createdAt' " ng-show="$index<3">
+  {{order.user}} purchased {{order.quantity}} {{order.product}} at {{order.createdAt| date:"medium"}}
+</div>
+<a href="/#!/orders">View more orders</a>|
+
+<h3>New Customers</h3>
+<ul>
+  <li ng-repeat="user in users | orderBy: '-createdAt' " ng-show="$index<3">{{user.name}} joined {{user.createdAt| date:"MM/dd/yyyy @ h:mma"}}</li>
+</ul>
+<a href="/#!/customers">View more customers</a>

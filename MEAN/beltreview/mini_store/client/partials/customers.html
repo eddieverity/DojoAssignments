@@ -1,0 +1,24 @@
+<h1>Customers</h1>
+
+<h3>Add a new Customer</h3>
+
+<form ng-submit="createUser()">
+  <label>Customer Name:</label>
+  <input type="text" ng-model="user.name" placeholder="Enter Name">
+  <button type="submit">Create User</button>
+</form><hr>
+
+<label>Filter Users</label>
+<input placeholder="Name" type="text" ng-model="userFilter.name">
+<table>
+  <tr>
+    <th>Customer Name</th>
+    <th>Created Date</th>
+    <th>Actions</th>
+  </tr>
+  <tr ng-repeat="user in users| filter:userFilter track by $index">
+    <td>{{user.name}}</td>
+    <td>{{user.createdAt| date:"MM dd yyyy"}}</td>
+    <td><a href ng-click="deleteUser(user._id)">Delete</a></td>
+  </tr>
+</table>

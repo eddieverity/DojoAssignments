@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="storeApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <script src="angular/angular.js"></script>
+  <script src="angular-route/angular-route.js"></script>
+  <script src="/app.js"></script>
+
+
+</head>
+<body>
+  <nav>
+    <a href="/#!/">Dashboard</a>|
+    <a href="/#!/products">Products</a>|
+    <a href="/#!/orders">Orders</a>|
+    <a href="/#!/customers">Customers</a>
+
+  </nav>
+  <div ng-view=""></div>
+</body>
+</html>

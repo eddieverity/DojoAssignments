@@ -3,6 +3,7 @@
 */
 console.log("/server.js");
 var express = require("express");
+//bodyparser takes data from forms and puts into body to read
 var bodyParser = require("body-parser");
 var path = require("path");
 

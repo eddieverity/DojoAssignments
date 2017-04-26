@@ -19,10 +19,10 @@ app.config(function ($routeProvider) {
         templateUrl: "/partials/home.html",
         controller: "homeFriendController"
     })
-    // .when("/delete/:id", {
-    //     templateUrl: "/partials/home.html",
-    //     controller: "deleteFriendController"
-    // })
+    .when("/delete/:id", {
+        templateUrl: "/partials/home.html",
+        controller: "deleteFriendController"
+    })
     .otherwise("/");
 });
 

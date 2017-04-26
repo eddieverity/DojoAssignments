@@ -9,7 +9,7 @@ module.exports = function (app)
     app.get("/api/friends/:id", friends.show);
     app.get("/api/friends", friends.home);
     app.post("/api/friends", friends.create);
-    app.put("/api/friends/:id", friends.edit);
+    app.put("/api/friends/edit/:id", friends.edit);
     app.delete('/api/friends/:id', friends.delete);
 
 }

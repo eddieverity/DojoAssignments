@@ -6,7 +6,7 @@ console.log("/server/controllers/friends.js");
 var mongoose = require("mongoose");
 var Friend = mongoose.model("Friend");
 
-
+//.home is defined in routes file to call this method
 module.exports.home = function (request, response) {
     Friend.find({}, function (err, friends) {
         if (err) {
@@ -43,7 +43,7 @@ module.exports.create = function (request, response) {
 }
 
 module.exports.edit = function (request, response) {
-    //this is jacked up, fix to an edit
+
     Friend.findOne({ _id: request.params.id }, function(err, friend) {
         if (err){
             console.log(err);
@@ -57,7 +57,7 @@ module.exports.edit = function (request, response) {
                     console.log(err)
                 }
                 else {
-                    resonse.json(updatedFriend)
+                    response.json(updatedFriend)
                 }
             })
         }
